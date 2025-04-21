@@ -3,7 +3,6 @@ from typing import List
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-from math import floor
 
 params = {"t_0": 0, "dt": 1/10, "v": -60, "V_0": -60, "tau": 2, "V_thresh": 20, "A_pl": 0.05, "A_mn": 0.05, "tau_pl": 20, "tau_mn": 20, "learning_rate": 0.01}
 all_neurons = {}
@@ -213,6 +212,8 @@ ax12.set_title("Membrane Potential Over Time for Neuron 2")
 ax12.legend()
 
 plt.tight_layout()
+plt.savefig('neuron-membrane-potential.png')
+plt.show()
 
 # Plot current over time for both neurons
 fig2, (ax21, ax22) = plt.subplots(2, 1, sharex=True, figsize=(10, 6))
@@ -235,6 +236,7 @@ ax22.set_title("Current Over Time for Neuron 2")
 ax22.legend()
 
 plt.tight_layout()
+plt.savefig('neuron-currents.png')
 plt.show()
 
 #
@@ -250,5 +252,3 @@ plt.show()
 #     fig1, update, frames=len(times1), interval=20, blit=True
 # )
 
-
-plt.show()
